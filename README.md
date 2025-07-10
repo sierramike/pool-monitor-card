@@ -466,7 +466,7 @@ These updates may require configuration changes when implemented:
 [release-link]: https://github.com/sierramike/pool-monitor-card/releases/latest
 [commits-shield]: https://img.shields.io/github/commit-activity/y/sierramike/pool-monitor-card.svg?style=for-the-badge
 [commits-link]: https://github.com/sierramike/pool-monitor-card/commits/main
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg?style=for-the-badge
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg?style=for-the-badge
 [maintenance-link]: https://github.com/sierramike/pool-monitor-card/graphs/commit-activity
 [hacs-shield]: https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge
 [hacs-link]: https://github.com/hacs/integration
