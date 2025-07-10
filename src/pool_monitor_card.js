@@ -60,15 +60,17 @@ export class PoolMonitorCard extends LitElement {
 
     // Vérifier si nous avons des données valides
     if (!data || Object.keys(data).length === 0) {
-      return html` <div id="pool-monitor-card">
-        <div class="warning-message">
-          <ha-icon icon="mdi:alert"></ha-icon>
-          <span>No valid sensor data available</span>
+      return html` <ha-card>
+        <div id="pool-monitor-card">
+          <div class="warning-message">
+            <ha-icon icon="mdi:alert"></ha-icon>
+            <span>No valid sensor data available</span>
+          </div>
         </div>
-      </div>`;
+      </ha-card>`;
     }
 
-    return html` <div id="pool-monitor-card">
+    return html` <ha-card><div id="pool-monitor-card">
       ${cardContent.generateTitle(config)}
       ${Object.values(data).map(sensorData => {
         if (sensorData?.invalid) {
@@ -94,7 +96,7 @@ export class PoolMonitorCard extends LitElement {
         }
         return generateContent(config, sensorData);
       })}
-    </div>`;
+    </div></ha-card>`;
   }
 
   /**
@@ -227,10 +229,10 @@ export class PoolMonitorCard extends LitElement {
 
     const entityState = this.hass.states[entity];
     // Get the configured precision from the entity's attributes
-    const precision = entityState.attributes?.display_precision ?? 
-                     entityState.attributes?.precision ?? 
+    const precision = entityState.attributes?.display_precision ??
+                     entityState.attributes?.precision ??
                      this.countDecimals(parseFloat(entityState.state));
-    
+
     // Parse and format the value with the configured precision
     const rawValue = parseFloat(entityState.state);
     newData.value = isNaN(rawValue) ? null : Number(rawValue.toFixed(precision));
@@ -548,3 +550,9 @@ export class PoolMonitorCard extends LitElement {
 }
 
 customElements.define('pool-monitor-card', PoolMonitorCard);
+window.customCards = window.customCards || [];
+window.customCards.push({
+    type: "pool-monitor-card",
+    name: "Pool Monitor Card",
+    description: "Monitor your pool sensors and display pool-related information",
+});

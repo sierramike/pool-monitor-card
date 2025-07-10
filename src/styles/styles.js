@@ -28,16 +28,8 @@ var css = LitElement.prototype.css;
  */
 export const styles = css`
   /** Host element styles */
-  :host {
-    background: var(--ha-card-background, var(--card-background-color, white));
-    border-radius: var(--ha-card-border-radius, 12px);
-    border-width: var(--ha-card-border-width, 4px);
-    box-shadow: var(--ha-card-box-shadow);
-    color: var(--primary-text-color);
-    display: block;
-    transition: all 0.3s ease-out 0s;
-    position: relative;
-    padding-top: 25px;
+  ha-card {
+    padding-top: 15px;
   }
 
   /** Section layouts */
@@ -63,7 +55,7 @@ export const styles = css`
   /** Entity image container */
   .pool-monitor-entity-img {
     text-align: right;
-    width: 10%;
+    width: 32px;
     float: left;
   }
 
