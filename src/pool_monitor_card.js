@@ -215,7 +215,7 @@ export class PoolMonitorCard extends LitElement {
         newData.is_mdi = true;
         newData.mdi_icon = sensorIcon;
       } else {
-        newData.img_src = `https://raw.githubusercontent.com/wilsto/pool-monitor-card/master/resources/${name}.png`;
+        newData.img_src = `https://raw.githubusercontent.com/sierramike/pool-monitor-card/master/resources/${name}.png`;
       }
     }
 

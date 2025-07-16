@@ -142,7 +142,7 @@ describe('Pool Monitor Card', () => {
       expect(data.entity).toBe('sensor.pool_temperature');
       expect(data.is_mdi).toBe(false);
       expect(data.img_src).toBe(
-        'https://raw.githubusercontent.com/wilsto/pool-monitor-card/master/resources/temperature.png',
+        'https://raw.githubusercontent.com/sierramike/pool-monitor-card/master/resources/temperature.png',
       );
       expect(data.hide_icon).toBe(false);
       expect(data.invalid).toBe(undefined);
@@ -326,7 +326,7 @@ describe('Pool Monitor Card', () => {
         expect(result.value).toBe(25);
       });
 
-      
+
       it('should handle missing entities', () => {
         const card = new PoolMonitorCard();
         card.hass = {
@@ -547,7 +547,7 @@ describe('Pool Monitor Card', () => {
             }]
           }
         };
-        
+
         const result = card.processData();
         expect(result.unsupported_type_1.invalid).toBe(true);
       });
@@ -594,7 +594,7 @@ describe('Pool Monitor Card', () => {
       });
       card.hass = {
         states: {
-          'sensor.test': { 
+          'sensor.test': {
             state: '25',
             last_updated: '2023-01-01T12:00:00Z',
             attributes: {
@@ -627,7 +627,7 @@ describe('Pool Monitor Card', () => {
       // Vérifier que les classes de setpoint sont correctement définies
       expect(result.setpoint_class).to.be.an('array').with.length(5);
       expect(result.setpoint_class.map(Number)).to.deep.equal([33, 34, 35, 36, 37]);
-      
+
       // En mode normal, une valeur < class[0] devrait avoir la couleur 'warn'
       expect(result.color).to.equal(card.config.colors.warn);
       expect(result.state).to.not.be.empty;
@@ -655,7 +655,7 @@ describe('Pool Monitor Card', () => {
       // Vérifier que les classes de setpoint sont correctement définies
       expect(result.setpoint_class).to.be.an('array').with.length(5);
       expect(result.setpoint_class.map(Number)).to.deep.equal([33, 34, 35, 36, 37]);
-      
+
       // Entre class[0] et class[1], devrait avoir la couleur 'low'
       expect(result.color).to.equal(card.config.colors.low);
       expect(result.state).to.not.be.empty;
@@ -683,7 +683,7 @@ describe('Pool Monitor Card', () => {
       // Vérifier que les classes de setpoint sont correctement définies
       expect(result.setpoint_class).to.be.an('array').with.length(5);
       expect(result.setpoint_class.map(Number)).to.deep.equal([33, 34, 35, 36, 37]);
-      
+
       // Entre class[1] et class[2], devrait avoir la couleur 'normal'
       expect(result.color).to.equal(card.config.colors.normal);
       expect(result.state).to.not.be.empty;
@@ -711,7 +711,7 @@ describe('Pool Monitor Card', () => {
       // Vérifier que les classes de setpoint sont correctement définies
       expect(result.setpoint_class).to.be.an('array').with.length(5);
       expect(result.setpoint_class.map(Number)).to.deep.equal([33, 34, 35, 36, 37]);
-      
+
       // Entre class[2] et class[3], devrait avoir la couleur 'normal'
       expect(result.color).to.equal(card.config.colors.normal);
       expect(result.state).to.not.be.empty;
@@ -739,7 +739,7 @@ describe('Pool Monitor Card', () => {
       // Vérifier que les classes de setpoint sont correctement définies
       expect(result.setpoint_class).to.be.an('array').with.length(5);
       expect(result.setpoint_class.map(Number)).to.deep.equal([33, 34, 35, 36, 37]);
-      
+
       // Entre class[3] et class[4], devrait avoir la couleur 'low'
       expect(result.color).to.equal(card.config.colors.low);
       expect(result.state).to.not.be.empty;
@@ -767,7 +767,7 @@ describe('Pool Monitor Card', () => {
       // Vérifier que les classes de setpoint sont correctement définies
       expect(result.setpoint_class).to.be.an('array').with.length(5);
       expect(result.setpoint_class.map(Number)).to.deep.equal([33, 34, 35, 36, 37]);
-      
+
       // Au-dessus de class[4], devrait avoir la couleur 'warn'
       expect(result.color).to.equal(card.config.colors.warn);
       expect(result.state).to.not.be.empty;
@@ -1050,19 +1050,19 @@ describe('Pool Monitor Card', () => {
       test('should handle different languages', () => {
         // Test French translations
         card.config.display.language = 'fr';
-        
+
         const oneMinute = new Date(now - 1 * 60 * 1000);
         expect(card.timeFromNow(oneMinute)).toBe('il y a 1 minute');
-        
+
         const twoMinutes = new Date(now - 2 * 60 * 1000);
         expect(card.timeFromNow(twoMinutes)).toBe('il y a 2 minutes');
-        
+
         // Test German translations
         card.config.display.language = 'de';
-        
+
         const oneHour = new Date(now - 1 * 60 * 60 * 1000);
         expect(card.timeFromNow(oneHour)).toBe('vor 1 Stunde');
-        
+
         const twoHours = new Date(now - 2 * 60 * 60 * 1000);
         expect(card.timeFromNow(twoHours)).toBe('vor 2 Stunden');
       });
@@ -1109,7 +1109,7 @@ describe('Pool Monitor Card', () => {
       });
       card.hass = {
         states: {
-          'sensor.test': { 
+          'sensor.test': {
             state: '25',
             last_updated: '2023-01-01T12:00:00Z',
             attributes: {
