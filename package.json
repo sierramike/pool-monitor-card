@@ -1,6 +1,6 @@
 {
   "name": "pool-monitor-card",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Pool Monitor Card for Home Assistant",
   "main": "dist/pool-monitor-card.js",
   "type": "module",

@@ -297,7 +297,7 @@ export class cardContent {
               `}
           <div
             class="cursor-text"
-            style="border-${data.side_align}: 5px solid ${config.marker}; text-align:${data.side_align};background-color:transparent ;/*${data.side_align}: ${data.pct_cursor}%*/;"
+            style="border-${data.side_align}: 5px solid ${config.marker}; text-align:${data.side_align};background-color:transparent ;${data.side_align}: ${data.pct_cursor}%;"
           >
             &nbsp; ${data.title} ${data.value} ${data.unit} ${data.separator} ${data.state} &nbsp;
           </div>

@@ -40,13 +40,13 @@ describe('Constants', () => {
     test('CARD_VERSION est généré correctement avec timestamp de dev', async () => {
       vi.stubGlobal('__BUILD_TIMESTAMP__', undefined);
       const { CARD_VERSION } = await import('../../src/constants');
-      expect(CARD_VERSION).toBe('1.0.1 (dev)');
+      expect(CARD_VERSION).toBe('1.0.2 (dev)');
     });
 
     test('CARD_VERSION est généré correctement avec un timestamp spécifique', async () => {
       vi.stubGlobal('__BUILD_TIMESTAMP__', '2024-12-01');
       const { CARD_VERSION } = await import('../../src/constants');
-      expect(CARD_VERSION).toBe('1.0.1 (2024-12-01)');
+      expect(CARD_VERSION).toBe('1.0.2 (2024-12-01)');
     });
   });
 });

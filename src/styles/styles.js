@@ -151,6 +151,7 @@ export const styles = css`
   }
 
   .cursor-text {
+    margin-right: 5px;
     position: absolute;
     width: 200px;
     height: 17px;
