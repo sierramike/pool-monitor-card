@@ -216,11 +216,11 @@ describe('Card Content', () => {
     it('should render compact mode with all elements', () => {
       const result = cardContent.generateCompactBody(mockConfig, mockData);
       const htmlString = String(result);
-      
+
       // Vérifier la présence des éléments structurels
       expect(htmlString).toContain('pool-monitor-container');
       expect(htmlString).toContain('pool-monitor-container-values');
-      
+
       // Vérifier les données affichées
       expect(htmlString).toContain(mockData.title);
       expect(htmlString).toContain(mockData.value);
@@ -235,10 +235,10 @@ describe('Card Content', () => {
           gradient: true
         }
       };
-      
+
       const result = cardContent.generateCompactBody(mockConfigWithGradient, mockData);
       const htmlString = String(result);
-      
+
       // Vérifier les éléments de gradient
       expect(htmlString).toContain('background-color');
       expect(htmlString).toContain(mockConfig.colors.normal);
@@ -250,14 +250,14 @@ describe('Card Content', () => {
         pct_min: 20,
         pct_max: 80
       };
-      
+
       const result = cardContent.generateCompactBody(mockConfig, mockDataWithMarkers);
       const htmlString = String(result);
-      
+
       // Vérifier les marqueurs min/max
       expect(htmlString).toContain('cursor-text');
-      expect(htmlString).toContain(`${mockDataWithMarkers.pct_min}%`);
-      expect(htmlString).toContain(`${mockDataWithMarkers.pct_max}%`);
+      expect(htmlString).toContain(`${mockDataWithMarkers.pct_min / 100}`);
+      expect(htmlString).toContain(`${mockDataWithMarkers.pct_max / 100}`);
     });
 
     it('should render MDI icon when is_mdi is true', () => {
@@ -345,7 +345,8 @@ describe('Card Content', () => {
       const htmlString = String(result);
       expect(htmlString).toContain('border-right: 5px solid');
       expect(htmlString).toContain('text-align:right');
-      expect(htmlString).toContain('right: 75%');
+//      expect(htmlString).toContain('right: 75%');
+      expect(htmlString).toContain('right:calc(5px + (100% - 42px) * 0.25)');
     });
 
     it('should handle min/max markers equal to cursor in compact mode', () => {
@@ -363,14 +364,14 @@ describe('Card Content', () => {
       };
       const result = cardContent.generateCompactBody(mockConfig, dataWithEqualMarkers);
       const htmlString = String(result);
-      
+
       // Il y a toujours un cursor-text pour le curseur principal
       expect(htmlString.match(/cursor-text/g)).toHaveLength(1);
-      
+
       // Vérifier que les marqueurs min/max ne sont pas rendus
       expect(htmlString).not.toContain('border-left: 2px solid');
       expect(htmlString).not.toContain('border-right: 2px solid');
-      
+
       // Vérifier que les autres éléments sont correctement rendus
       expect(htmlString).toContain('Test Title');
       expect(htmlString).toContain('25');
@@ -394,15 +395,15 @@ describe('Card Content', () => {
       };
       const result = cardContent.generateCompactBody(mockConfig, dataWithDifferentMarkers);
       const htmlString = String(result);
-      
+
       // Un cursor-text pour le curseur principal et deux pour min/max
       expect(htmlString.match(/cursor-text/g)).toHaveLength(3);
-      
+
       // Vérifier les styles des marqueurs min/max
       expect(htmlString).toContain('border-left: 2px solid');
       expect(htmlString).toContain('border-right: 2px solid');
-      expect(htmlString).toContain('left: 30%');
-      expect(htmlString).toContain('left: 70%');
+      expect(htmlString).toContain('left:calc(37px + (100% - 42px) * 0.3)');
+      expect(htmlString).toContain('right:calc(5px + (100% - 42px) * 0.3)');
     });
   });
 

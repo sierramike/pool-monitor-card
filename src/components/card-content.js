@@ -297,7 +297,7 @@ export class cardContent {
               `}
           <div
             class="cursor-text"
-            style="border-${data.side_align}: 5px solid ${config.marker}; text-align:${data.side_align};background-color:transparent ;${data.side_align}: ${data.pct_cursor}%;"
+            style="border-${data.side_align}: 5px solid ${config.marker}; text-align:${data.side_align};background-color:transparent; ${data.side_align === 'left' ? "left:calc(37px + (100% - 42px) * " + parseFloat(data.pct_cursor) / 100 + ");" : "right:calc(5px + (100% - 42px) * " + (100 - parseFloat(data.pct_cursor)) / 100 + ");"};"
           >
             &nbsp; ${data.title} ${data.value} ${data.unit} ${data.separator} ${data.state} &nbsp;
           </div>
@@ -307,7 +307,7 @@ export class cardContent {
                 style="border-left: 2px solid ${config.colors
                   .hi_low}; border-top: 2px solid ${config.colors
                   .hi_low}; border-bottom: 2px solid ${config.colors
-                  .hi_low}; width: 2px; height: 12px; text-align:${data.side_align}; background-color:transparent; ${data.side_align}: ${data.pct_min}%;"
+                  .hi_low}; width: 2px; height: 12px; text-align:${data.side_align}; background-color:transparent; ${"left:calc(37px + (100% - 42px) * " + parseFloat(data.pct_min) / 100 + ");"};"
               ></div>`
             : ''}
           ${data.pct_max !== data.pct_cursor
@@ -316,7 +316,7 @@ export class cardContent {
                 style="border-right: 2px solid ${config.colors
                   .hi_low}; border-top: 2px solid ${config.colors
                   .hi_low}; border-bottom: 2px solid ${config.colors
-                  .hi_low}; width: 2px; height: 12px; text-align:${data.side_align}; background-color:transparent; ${data.side_align}: ${data.pct_max}%;"
+                  .hi_low}; width: 2px; height: 12px; text-align:${data.side_align}; background-color:transparent; ${"right:calc(5px + (100% - 42px) * " + (100 - parseFloat(data.pct_max)) / 100 + ");"};"
               ></div>`
             : ''}
         </div>

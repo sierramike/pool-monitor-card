@@ -362,46 +362,47 @@ export class PoolMonitorCard extends LitElement {
       0,
       Math.min(
         98.5,
-        (Math.max(0, newData.value - (setpoint - 3 * setpoint_step)) / (6 * setpoint_step)) *
-          0.85 *
+        (Math.max(0, newData.value - (setpoint - 3 * setpoint_step)) / (6 * setpoint_step)) * 100
+/*          0.85 *
           100 +
-          15,
+          15*/,
       ),
     ).toFixed(0);
     newData.pct_min = Math.max(
       0,
       Math.min(
         98.5,
-        (Math.max(0, newData.min_value - (setpoint - 3 * setpoint_step)) / (6 * setpoint_step)) *
-          0.85 *
+        (Math.max(0, newData.min_value - (setpoint - 3 * setpoint_step)) / (6 * setpoint_step)) * 100
+/*          0.85 *
           100 +
-          15,
+          15*/,
       ),
     ).toFixed(0);
     newData.pct_max = Math.max(
       0,
       Math.min(
         98.5,
-        (Math.max(0, newData.max_value - (setpoint - 3 * setpoint_step)) / (6 * setpoint_step)) *
-          0.85 *
+        (Math.max(0, newData.max_value - (setpoint - 3 * setpoint_step)) / (6 * setpoint_step)) * 100
+/*          0.85 *
           100 +
-          15,
+          15*/,
       ),
     ).toFixed(0);
     newData.pct_marker = newData.value > newData.setpoint ? newData.pct - 12 : newData.pct - 5;
     newData.side_align = newData.value > setpoint ? 'right' : 'left';
-    newData.pct_cursor =
-      newData.value > setpoint ? 100 - parseFloat(newData.pct) : parseFloat(newData.pct) - 2;
+/*    newData.pct_cursor =
+      newData.value > setpoint ? 100 - parseFloat(newData.pct) : parseFloat(newData.pct) - 2;*/
+    newData.pct_cursor = newData.pct;
     newData.pct_state_step =
       newData.value > setpoint ? 105 - parseFloat(newData.pct) : parseFloat(newData.pct) + 5;
-    newData.pct_min =
+/*    newData.pct_min =
       newData.value > setpoint
         ? 100 - parseFloat(newData.pct_min)
         : parseFloat(newData.pct_min) - 2;
     newData.pct_max =
       newData.value > setpoint
         ? 100 - parseFloat(newData.pct_max)
-        : parseFloat(newData.pct_max) - 2;
+        : parseFloat(newData.pct_max) - 2;*/
 
     return newData;
   }
