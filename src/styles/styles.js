@@ -30,6 +30,7 @@ export const styles = css`
   /** Host element styles */
   ha-card {
     padding-top: 15px;
+    padding-right: 5px;
   }
 
   /** Section layouts */

@@ -85,16 +85,16 @@ export class cardContent {
             ? html`
                 <div
                   class="progress-bar-child"
-                  style="background: linear-gradient(to right, 
+                  style="background: linear-gradient(to right,
               ${data.mode === 'heatflow'
-                    ? `${config.colors.cool} 15%, 
-                 ${config.colors.low} 50%, 
+                    ? `${config.colors.cool} 15%,
+                 ${config.colors.low} 50%,
                  ${config.colors.warn} 85%`
-                    : `${config.colors.warn} 5%, 
-                 ${config.colors.low} 30%, 
-                 ${config.colors.normal}, 
-                 ${config.colors.normal}, 
-                 ${config.colors.low} 70%, 
+                    : `${config.colors.warn} 5%,
+                 ${config.colors.low} 30%,
+                 ${config.colors.normal},
+                 ${config.colors.normal},
+                 ${config.colors.low} 70%,
                  ${config.colors.warn} 95%`}
             );"
                 ></div>
@@ -244,16 +244,16 @@ export class cardContent {
             ? html`
                 <div
                   class="progress-bar-child"
-                  style="background: linear-gradient(to right, 
+                  style="background: linear-gradient(to right,
               ${data.mode === 'heatflow'
-                    ? `${config.colors.cool} 15%, 
-                 ${config.colors.low} 50%, 
+                    ? `${config.colors.cool} 15%,
+                 ${config.colors.low} 50%,
                  ${config.colors.warn} 85%`
-                    : `${config.colors.warn} 5%, 
-                 ${config.colors.low} 30%, 
-                 ${config.colors.normal}, 
-                 ${config.colors.normal}, 
-                 ${config.colors.low} 70%, 
+                    : `${config.colors.warn} 5%,
+                 ${config.colors.low} 30%,
+                 ${config.colors.normal},
+                 ${config.colors.normal},
+                 ${config.colors.low} 70%,
                  ${config.colors.warn} 95%`}
             );"
                 ></div>
@@ -297,7 +297,7 @@ export class cardContent {
               `}
           <div
             class="cursor-text"
-            style="border-${data.side_align}: 5px solid ${config.marker}; text-align:${data.side_align};background-color:transparent ;${data.side_align}: ${data.pct_cursor}%;"
+            style="border-${data.side_align}: 5px solid ${config.marker}; text-align:${data.side_align};background-color:transparent ;/*${data.side_align}: ${data.pct_cursor}%*/;"
           >
             &nbsp; ${data.title} ${data.value} ${data.unit} ${data.separator} ${data.state} &nbsp;
           </div>

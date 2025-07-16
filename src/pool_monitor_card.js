@@ -551,8 +551,4 @@ export class PoolMonitorCard extends LitElement {
 
 customElements.define('pool-monitor-card', PoolMonitorCard);
 window.customCards = window.customCards || [];
-window.customCards.push({
-    type: "pool-monitor-card",
-    name: "Pool Monitor Card",
-    description: "Monitor your pool sensors and display pool-related information",
-});
+window.customCards.push({ type: CARD_INFO.cardType, name: CARD_INFO.cardName, description: CARD_INFO.cardDescription });

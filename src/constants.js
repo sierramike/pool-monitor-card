@@ -4,7 +4,7 @@
  */
 
 /** @const {string} VERSION - Current version of the card */
-const VERSION = '2.1.0';
+const VERSION = '2.0.1';
 /* global __BUILD_TIMESTAMP__ */
 /** @const {string} BUILD_TIMESTAMP - Build timestamp for the card */
 const BUILD_TIMESTAMP = __BUILD_TIMESTAMP__ || 'dev';
