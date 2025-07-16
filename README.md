@@ -462,14 +462,14 @@ These updates may require configuration changes when implemented:
 
 <!--URLS FOR BADGES-->
 
-[release-shield]: https://img.shields.io/github/v/release/wilsto/pool-monitor-card?include_prereleases&style=for-the-badge
-[release-link]: https://github.com/wilsto/pool-monitor-card/releases/latest
-[commits-shield]: https://img.shields.io/github/commit-activity/y/wilsto/pool-monitor-card.svg?style=for-the-badge
-[commits-link]: https://github.com/wilsto/pool-monitor-card/commits/main
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg?style=for-the-badge
-[maintenance-link]: https://github.com/wilsto/pool-monitor-card/graphs/commit-activity
+[release-shield]: https://img.shields.io/github/v/release/sierramike/pool-monitor-card?include_prereleases&style=for-the-badge
+[release-link]: https://github.com/sierramike/pool-monitor-card/releases/latest
+[commits-shield]: https://img.shields.io/github/commit-activity/y/sierramike/pool-monitor-card.svg?style=for-the-badge
+[commits-link]: https://github.com/sierramike/pool-monitor-card/commits/main
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg?style=for-the-badge
+[maintenance-link]: https://github.com/sierramike/pool-monitor-card/graphs/commit-activity
 [hacs-shield]: https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge
 [hacs-link]: https://github.com/hacs/integration
-[git-last-commit-badge]: https://img.shields.io/github/last-commit/wilsto/pool-monitor-card?style=for-the-badge
-[codecov-shield]: https://img.shields.io/codecov/c/github/wilsto/pool-monitor-card?style=for-the-badge
-[codecov-link]: https://codecov.io/gh/wilsto/pool-monitor-card
+[git-last-commit-badge]: https://img.shields.io/github/last-commit/sierramike/pool-monitor-card?style=for-the-badge
+[codecov-shield]: https://img.shields.io/codecov/c/github/sierramike/pool-monitor-card?style=for-the-badge
+[codecov-link]: https://codecov.io/gh/sierramike/pool-monitor-card
